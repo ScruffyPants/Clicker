@@ -17,21 +17,12 @@ var houses = {smallHouse:0,
 	};
 
 var requirements = {
-<<<<<<< HEAD
-	smallHouse:[["wood", 3],["stone", 3]], 
-	largeHouse:[["wood", 5],["stone", 3]], 
-	woodcuttersHut:[["stone", 10]], 
-	quarry:[["wood", 10]], 
+	smallHouse:[["wood", 3],["stone", 3]],
+	largeHouse:[["wood", 5],["stone", 3]],
+	woodcuttersHut:[["stone", 10]],
+	quarry:[["wood", 10]],
 	mine:[["wood", 4],["stone", 3]],
 	camp:[["wood", 10],["stone", 7]]
-=======
-	smallHouse:[["wood", 3],["stone", 3]],
-	largeHouse:[["wood", 500],["stone", 300]],
-	woodcuttersHut:[["stone", 1000]],
-	quarry:[["wood", 1000]],
-	mine:[["wood", 4000],["stone", 3000]],
-	camp:[["wood", 10000],["stone", 7000]]
->>>>>>> 5f99001be7a85f2ce39f2c58701de76caa5cb45e
 };
 
 
