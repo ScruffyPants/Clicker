@@ -8,7 +8,8 @@ var houses = {smallHouse:0,
 	woodcuttersHut:0,
 	quarry:0,
 	mine:0,
-	camp:0
+	camp:0,
+	farm:0
 	};
 
 var requirements = {
@@ -17,7 +18,9 @@ var requirements = {
 	woodcuttersHut:[["stone", 10]],
 	quarry:[["wood", 10]],
 	mine:[["wood", 4],["stone", 3]],
-	camp:[["wood", 10],["stone", 7]]
+	camp:[["wood", 10],["stone", 7]],
+	farm:[["wood", 4],["stone", 6]],
+	woodcutters:[["woodcuttersHut", 1],["unemployed", 1]]
 };
 
 var populationGrowth = {
@@ -39,13 +42,16 @@ function buy(clickedId){
 	var flag = true;
 	for(i = 0; i < requirements[clickedId].length; i++){
 		var res = requirements[clickedId][i][0];
-		if (requirements[clickedId][i][1] > resources[res]){
+		if (requirements[clickedId][i][1] > resources[res] ||
+			requirements[clickedId][i][1] > people[res] ||
+			requirements[clickedId][i][1] > houses[res]){
 			flag = false;
 			break;
 		}
 	}
 	if (flag){
 		houses[clickedId]++;
+		people[clickedId]++;
 		for(i = 0; i < requirements[clickedId].length; i++){
 			resources[requirements[clickedId][i][0]]-= requirements[clickedId][i][1];
 			document.getElementById(requirements[clickedId][i][0]).innerHTML = resources[requirements[clickedId][i][0]];
@@ -78,6 +84,7 @@ function increasePopulation(clickedId){
 	}
 }
 
+<<<<<<< HEAD
 function gameCounter(){
   week++;
   document.getElementById("week").innerHTML = week;
@@ -87,3 +94,5 @@ function gameCounter(){
 function startGame(){
   gameCounter();
 }
+=======
+>>>>>>> 837f43d2f7101fb48ae23c5543a6221ede8eb1c5
