@@ -14,6 +14,7 @@ function clicked(clickedId){
 
   resources[clickedId]++;
   document.getElementById(clickedId).innerHTML = resources[clickedId];
+
   console.log('press');
   return "test";
 }
