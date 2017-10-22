@@ -7,13 +7,21 @@
   </head>
   <body>
     <div id="container">
-      <div id="info">
-          Wood: <p id='wood'>0</p>
-          Stone: <p id='stone'>0</p>
-          Food: <p id="food">0</p>
+      <div id="resources">
+        <ol>
+          <li><img class="button" src="WoodIcon.png" onclick="clicked('wood')"><p id="wood">0</p></li>
+          <li><img class="button" src="WoodIcon.png" onclick="clicked('stone')"><p id="stone">0</p></li>
+          <li></li>
+        </ol>
       </div>
-      <div id="buttons">
-        <img class="button wood" src="WoodIcon.png" onclick="clicked('wood')">
+      <div id="people">
+
+      </div>
+      <div id="houses">
+          <button class="button" onclick="buy('smallHouse')">buy house</button>
+      </div>
+      <div id="info">
+
       </div>
     </div>
   </body>

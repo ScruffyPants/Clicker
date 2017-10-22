@@ -6,23 +6,20 @@
 #container{
   height:100vh;
   width:100vw;
+  padding: 3vh 3vw 3vh 3vw;
 }
-#info{
-  width:50vw;
-  height:100vh;
-  float:right;
-  text-align: center;
-  font-family: Helvetica;
-  padding-top: 10vh;
-  font-weight: bold;
-  font-size: 300%;
-  background-color: #51626a;
+#container div{
+  height:47vh;
+  width: 47vw;
+  float:left;
 }
-#buttons{
-  width:50vw;
-  height:100vh;
-  background-color: #586671;
+#resources ol{
+  list-style: none;
 }
-.wood{
-  height:300px;
+#resources p{
+  float: right;
+  font-size: 9vh;
+}
+.button{
+  height:9vh;
 }
