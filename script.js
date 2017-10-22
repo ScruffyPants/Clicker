@@ -10,11 +10,8 @@ var people = {};
 var resources = {wood:0, stone:0, food:0, metal:0, weapons:0};
 
 function clicked(clickedId){
-	
-	counter[clickedId]++;
-	alert(counter[clickedId]);
-  //document.getElementById("info").innerHTML = ++counter;
+  resources[clickedId]++;
+  document.getElementById("info").innerHTML = resources[clickedId];
   console.log('press');
   return "test";
 }
-
