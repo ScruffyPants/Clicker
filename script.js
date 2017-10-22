@@ -18,11 +18,11 @@ var houses = {smallHouse:0,
 
 var requirements = {
 	smallHouse:[["wood", 3],["stone", 3]], 
-	largeHouse:[["wood", 500],["stone", 300]], 
-	woodcuttersHut:[["stone", 1000]], 
-	quarry:[["wood", 1000]], 
-	mine:[["wood", 4000],["stone", 3000]],
-	camp:[["wood", 10000],["stone", 7000]]
+	largeHouse:[["wood", 5],["stone", 3]], 
+	woodcuttersHut:[["stone", 10]], 
+	quarry:[["wood", 10]], 
+	mine:[["wood", 4],["stone", 3]],
+	camp:[["wood", 10],["stone", 7]]
 };
 
 
@@ -45,7 +45,7 @@ function buy(clickedId){
 		}
 	}
 	if (flag){
-		houses[requirements[clickedId][i]]++;
+		houses[clickedId]++;
 		for(i = 0; i < requirements[clickedId].length; i++){
 			resources[requirements[clickedId][i][0]]-= requirements[clickedId][i][1];
 			document.getElementById(requirements[clickedId][i][0]).innerHTML = resources[requirements[clickedId][i][0]];
