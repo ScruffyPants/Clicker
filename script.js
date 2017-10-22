@@ -13,7 +13,7 @@ var houses = {small:0, large:0};
 function clicked(clickedId){
 
   resources[clickedId]++;
-  document.getElementById("info").innerHTML = resources[clickedId];
+  document.getElementById(clickedId).innerHTML = resources[clickedId];
 
   console.log('press');
   return "test";
