@@ -11,7 +11,7 @@ var resources = {wood:0, stone:0, food:0, metal:0, weapons:0};
 
 function clicked(clickedId){
   resources[clickedId]++;
-  document.getElementById("info").innerHTML = resources[clickedId];
+  document.getElementById(clickedId).innerHTML = resources[clickedId];
   console.log('press');
   return "test";
 }
