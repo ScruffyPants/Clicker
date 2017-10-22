@@ -17,7 +17,7 @@ var houses = {smallHouse:0,
 	};
 
 var requirements = {
-	smallHouse:[["wood", 50],["stone", 30]], 
+	smallHouse:[["wood", 3],["stone", 3]], 
 	largeHouse:[["wood", 500],["stone", 300]], 
 	woodcuttersHut:[["stone", 1000]], 
 	quarry:[["wood", 1000]], 
@@ -36,11 +36,21 @@ function clicked(clickedId){
 }
 
 function buy(clickedId){
+	var flag = true; 
 	for(i = 0; i < requirements[clickedId].length; i++){
-		var res = requirements[clickedId][i];
-		if (requirements[clickedId][i][0] >= resources[res]){
-			houses[requirements[clickedId][i]]++;
-			document.getElementById(clickedId).innerHTML = resources[clickedId];
+		var res = requirements[clickedId][i][0];
+		if (requirements[clickedId][i][1] > resources[res]){
+			flag = false;
+			break;
 		}
 	}
+	if (flag){
+		houses[requirements[clickedId][i]]++;
+		for(i = 0; i < requirements[clickedId].length; i++){
+			resources[requirements[clickedId][i][0]]-= requirements[clickedId][i][1];
+			document.getElementById(requirements[clickedId][i][0]).innerHTML = resources[requirements[clickedId][i][0]];
+		}
+
+	}
 }
+
