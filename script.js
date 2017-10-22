@@ -6,7 +6,7 @@ var troopsCounter = 0;
 
 var counter = new Array(6).fill(0);
 
-var people = {woodcutters:0, miners:0, troops:0};
+var people = {woodcutters:0, miners:0, troops:0, unemployed:0};
 var resources = {wood:0, stone:0, food:0, metal:0, weapons:0};
 var houses = {smallHouse:0,
 	largeHouse:0,
@@ -23,6 +23,11 @@ var requirements = {
 	quarry:[["wood", 10]],
 	mine:[["wood", 4],["stone", 3]],
 	camp:[["wood", 10],["stone", 7]]
+};
+
+var populationGrowth = {
+	smallHouse:2,
+	largeHouse:4
 };
 
 
@@ -50,7 +55,7 @@ function buy(clickedId){
 			resources[requirements[clickedId][i][0]]-= requirements[clickedId][i][1];
 			document.getElementById(requirements[clickedId][i][0]).innerHTML = resources[requirements[clickedId][i][0]];
 		}
-
+		increasePopulation(clickedId);
 	}
   Update();
 }
@@ -68,4 +73,13 @@ function Update(){
     if(document.getElementById(key))
       document.getElementById(key).innerHTML = houses[key];
   }
+}
+
+function increasePopulation(clickedId){
+	for(var key in populationGrowth){
+		if (clickedId == key){
+			people.unemployed+=populationGrowth[key];
+		}
+
+	}
 }
