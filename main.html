@@ -6,7 +6,7 @@
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javasctipt" src="animations.js"></script>
   </head>
-  <body>
+  <body onload="startGame()">
     <div id="container">
       <div id="resources">
         <ol>
@@ -16,7 +16,7 @@
         </ol>
       </div>
       <div id="people">
-          Population: <p id='unemlpoyed'>0</p>
+          Population: <p id='unemployed'>0</p>
       </div>
       <div id="houses">
           <button class="button" onclick="buy('smallHouse')">Buy small house (3 wood, 3 stone)</button>
@@ -27,6 +27,7 @@
           <button class="button" onclick="buy('camp')">Buy warriors camp (10 wood, 7 stone)</button>
       </div>
       <div id="info">
+          Week: <p id="week">0</p>
           Small Houses: <p id="smallHouse">0</p>
           Large Houses: <p id="largeHouse">0</p>
           Woodcutters Hut: <p id="woodcuttersHut">0</p>

@@ -1,10 +1,5 @@
-var woodCounter = 0;
-var stoneCounter = 0;
-var foodCounter = 0;
-var metalCounter = 0;
-var troopsCounter = 0;
-
-var counter = new Array(6).fill(0);
+var year = 0;
+var week = 0;
 
 var people = {woodcutters:0, miners:0, troops:0, unemployed:0};
 var resources = {wood:0, stone:0, food:0, metal:0, weapons:0};
@@ -80,6 +75,15 @@ function increasePopulation(clickedId){
 		if (clickedId == key){
 			people.unemployed+=populationGrowth[key];
 		}
-
 	}
+}
+
+function gameCounter(){
+  week++;
+  document.getElementById("week").innerHTML = week;
+  setTimeout(function(){ gameCounter(); },1000);
+}
+
+function startGame(){
+  gameCounter();
 }
