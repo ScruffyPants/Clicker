@@ -6,10 +6,12 @@ var troopsCounter = 0;
 
 var counter = new Array(6).fill(0);
 
-var people = {};
+var people = {woodcutters:0, miners:0, troops:0};
 var resources = {wood:0, stone:0, food:0, metal:0, weapons:0};
+var houses = {small:0, large:0};
 
 function clicked(clickedId){
+
   resources[clickedId]++;
   document.getElementById(clickedId).innerHTML = resources[clickedId];
   console.log('press');
