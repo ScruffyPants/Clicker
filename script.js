@@ -18,6 +18,9 @@ var resources = {
 	population:0
 };
 
+var year = 0;
+var week = 0;
+
 var requirements = {
 	smallHouse:[["wood", 3],["stone", 3]],
 	largeHouse:[["wood", 5],["stone", 3]],
@@ -87,6 +90,14 @@ function increasePopulation(clickedId){
 			resources.population+=populationGrowth[key];
 			resources.unemployed+=populationGrowth[key];
 		}
-
 	}
+}
+function gameCounter(){
+  week++;
+  document.getElementById("week").innerHTML = week;
+  setTimeout(function(){ gameCounter(); },1000);
+}
+
+function startGame(){
+  gameCounter();
 }

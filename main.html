@@ -6,7 +6,7 @@
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javasctipt" src="animations.js"></script>
   </head>
-  <body>
+  <body onload="startGame()">
     <div id="container">
       <div id="resources">
         <ol>
@@ -31,6 +31,7 @@
           <button class="button" onclick="buy('woodcutters')">Get woodcutter</button>
       </div>
       <div id="info">
+          Week: <p id="week">0</p>
           Small Houses: <p id="smallHouse">0</p>
           Large Houses: <p id="largeHouse">0</p>
           Woodcutters Hut: <p id="woodcuttersHut">0</p>
