@@ -10,6 +10,11 @@ class Person{
     this.occupation = occupation;
   }
 
+  generateName(){
+    var nameArray = JSON.parse(nameList);
+    //console.log(nameArray.names.lenght);
+  }
+
   printInfo(){
     console.log(this.firstName);
   }

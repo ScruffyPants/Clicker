@@ -1,9 +1,8 @@
 var resources = {
-<<<<<<< HEAD
-	wood:0, 
-	stone:0, 
-	food:0, 
-	metal:0, 
+	wood:0,
+	stone:0,
+	food:0,
+	metal:0,
 	weapons:0,
 	woodcutters:0,
 	miners:0,
