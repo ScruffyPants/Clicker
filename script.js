@@ -1,13 +1,22 @@
-var people = {woodcutters:0, miners:0, troops:0, unemployed:0};
-var resources = {wood:0, stone:0, food:0, metal:0, weapons:0};
-var houses = {smallHouse:0,
+var resources = {
+	wood:0, 
+	stone:0, 
+	food:0, 
+	metal:0, 
+	weapons:0,
+	woodcutters:0,
+	miners:0,
+	troops:0,
+	unemployed:0,
+	smallHouse:0,
 	largeHouse:0,
 	woodcuttersHut:0,
 	quarry:0,
 	mine:0,
 	camp:0,
-	farm:0
-	};
+	farm:0,
+	population:0
+};
 
 var requirements = {
 	smallHouse:[["wood", 3],["stone", 3]],
@@ -17,7 +26,9 @@ var requirements = {
 	mine:[["wood", 4],["stone", 3]],
 	camp:[["wood", 10],["stone", 7]],
 	farm:[["wood", 4],["stone", 6]],
-	woodcutters:[["woodcuttersHut", 1],["unemployed", 1]]
+	woodcutters:[["woodcuttersHut", 1],["unemployed", 1]],
+	miners:[["mine", 1],["unemployed", 1]],
+	troops:[["camp", 1], ["unemployed", 1]]
 };
 
 var populationGrowth = {
@@ -39,16 +50,13 @@ function buy(clickedId){
 	var flag = true;
 	for(i = 0; i < requirements[clickedId].length; i++){
 		var res = requirements[clickedId][i][0];
-		if (requirements[clickedId][i][1] > resources[res] || 
-			requirements[clickedId][i][1] > people[res] || 
-			requirements[clickedId][i][1] > houses[res]){
+		if (requirements[clickedId][i][1] > resources[res]){
 			flag = false;
 			break;
 		}
 	}
 	if (flag){
-		houses[clickedId]++;
-		people[clickedId]++;
+		resources[clickedId]++;
 		for(i = 0; i < requirements[clickedId].length; i++){
 			resources[requirements[clickedId][i][0]]-= requirements[clickedId][i][1];
 			document.getElementById(requirements[clickedId][i][0]).innerHTML = resources[requirements[clickedId][i][0]];
@@ -76,9 +84,9 @@ function Update(){
 function increasePopulation(clickedId){
 	for(var key in populationGrowth){
 		if (clickedId == key){
-			people.unemployed+=populationGrowth[key];
+			resources.population+=populationGrowth[key];
+			resources.unemployed+=populationGrowth[key];
 		}
 
 	}
 }
-
