@@ -1,4 +1,5 @@
 var resources = {
+<<<<<<< HEAD
 	wood:0, 
 	stone:0, 
 	food:0, 
@@ -15,10 +16,12 @@ var resources = {
 	mine:0,
 	camp:0,
 	farm:0,
-	population:0
+	population:0,
+	farmers:0
 };
 
-var year = 0;
+var year = 1;
+var month = 1;
 var week = 0;
 
 var requirements = {
@@ -94,6 +97,15 @@ function increasePopulation(clickedId){
 }
 function gameCounter(){
   week++;
+	if(week%4 == 0){
+		month++;
+		if(month == 13){
+			month = 1;
+			year++;
+			document.getElementById("year").innerHTML = year;
+		}
+		document.getElementById("month").innerHTML = month;
+	}
   document.getElementById("week").innerHTML = week;
   setTimeout(function(){ gameCounter(); },1000);
 }
