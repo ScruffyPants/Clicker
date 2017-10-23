@@ -23,6 +23,12 @@ var year = 1;
 var month = 1;
 var week = 0;
 
+var occupation = {
+	woodcutters:[["wood", 3],["food", -1]],
+	miners:[["stone", 3], ["food", -1]],
+	farmers:[["food", 3], ["stone", -1], ["wood", -1]]
+};
+
 var requirements = {
 	smallHouse:[["wood", 3],["stone", 3]],
 	largeHouse:[["wood", 5],["stone", 3]],
@@ -33,7 +39,8 @@ var requirements = {
 	farm:[["wood", 4],["stone", 6]],
 	woodcutters:[["woodcuttersHut", 1],["unemployed", 1]],
 	miners:[["mine", 1],["unemployed", 1]],
-	troops:[["camp", 1], ["unemployed", 1]]
+	troops:[["camp", 1], ["unemployed", 1]],
+	farmers:[["farm", 1], ["unemployed", 1]]
 };
 
 var populationGrowth = {
@@ -94,6 +101,18 @@ function increasePopulation(clickedId){
 		}
 	}
 }
+
+function resourseChange(){
+	for(var key in occupation){
+		for(var key2 in occupation[key]){
+			if (resources[key] > 0){
+				resources[occupation[key][key2][0]] += (occupation[key][key2][1] * resources[key]);
+			}
+		}
+	}
+	Update();
+}
+
 function gameCounter(){
   week++;
 	if(week%4 == 0){
@@ -107,6 +126,7 @@ function gameCounter(){
 	}
   document.getElementById("week").innerHTML = week;
   setTimeout(function(){ gameCounter(); },1000);
+  resourseChange();
 }
 
 function startGame(){
