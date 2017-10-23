@@ -15,7 +15,8 @@ var resources = {
 	mine:[0, 0],
 	camp:[0, 0],
 	farm:[0, 0],
-	population:[0, 0]
+	population:[0, 0],
+	farmers:[0, "food"]
 };
 
 var year = 0;
@@ -31,7 +32,8 @@ var requirements = {
 	farm:[["wood", 4],["stone", 6]],
 	woodcutters:[["woodcuttersHut", 1],["unemployed", 1]],
 	miners:[["mine", 1],["unemployed", 1]],
-	troops:[["camp", 1], ["unemployed", 1]]
+	troops:[["camp", 1], ["unemployed", 1]],
+	farmers:[["farm", 1], ["unemployed", 1]]
 };
 
 var populationGrowth = {
