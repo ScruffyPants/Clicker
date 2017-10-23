@@ -14,8 +14,9 @@
   width: 47vw;
   float:left;
 }
-#resources ol{
-  list-style: none;
+#resources img{
+  width:7vw;
+  height: auto;
 }
 #resources p{
   #float: right;
@@ -31,5 +32,8 @@ p{
 #info, #people{
   text-align: center;
   vertical-align: middle;
-  font-size: 200%;
+  font-size: 150%;
+}
+#houses img, button{
+
 }
