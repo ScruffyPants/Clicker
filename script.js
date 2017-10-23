@@ -1,5 +1,5 @@
 var resources = {
-	wood:[0, 0], 
+	wood:[0, 0],
 	stone:[0, 0] ,
 	food:[0, 0] ,
 	metal:[0, 0] ,
@@ -19,7 +19,8 @@ var resources = {
 	farmers:[0, "food"]
 };
 
-var year = 0;
+var year = 1;
+var month = 1;
 var week = 0;
 
 var requirements = {
@@ -106,6 +107,15 @@ function increaseResources(){
 
 function gameCounter(){
   week++;
+	if(week%4 == 0){
+		month++;
+		if(month == 13){
+			month = 1;
+			year++;
+			document.getElementById("year").innerHTML = year;
+		}
+		document.getElementById("month").innerHTML = month;
+	}
   document.getElementById("week").innerHTML = week;
   setTimeout(function(){ gameCounter(); },1000);
   increaseResources();

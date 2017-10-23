@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
@@ -10,20 +11,17 @@
   <body onload="startGame()">
     <div id="container">
       <div id="resources">
-        <ol>
-          <li><img class="button" src="WoodIcon.png" onclick="clicked('wood')"><p id="wood">0</p></li>
-          <li><img class="button" src="StoneIcon.png" onclick="clicked('stone')"><p id="stone">0</p></li>
-          <li><img class="button" src="food.png" onclick="clicked('food')"><p id="food">0</p></li>
-          <li></li>
-        </ol>
+          <img class="button" src="WoodIcon.png" onclick="clicked('wood')"><p id="wood">0</p><br>
+          <img class="button" src="StoneIcon.png" onclick="clicked('stone')"><p id="stone">0</p><br>
+          <img class="button" src="food.png" onclick="clicked('food')"><p id="food">0</p><br>
       </div>
       <div id="people">
-          Population: <p id='population'>0</p>
-          Unemployed: <p id='unemployed'>0</p>
-          Woodcutters: <p id='woodcutters'>0</p>
-          Troops: <p id='troops'>0</p>
-          Miners: <p id='miners'>0</p>
-          Farmers: <p id='farmers'>0</p>
+          Population: <p id='population'>0</p><br>
+          Unemployed: <p id='unemployed'>0</p><br>
+          Woodcutters: <p id='woodcutters'>0</p><br>
+          Troops: <p id='troops'>0</p><br>
+          Miners: <p id='miners'>0</p><br>
+          Farmers: <p id='farmers'>0</p><br>
       </div>
       <div id="houses">
         Buildings:
@@ -41,14 +39,16 @@
           <img class="button" onclick="buy('farmers')" src="shovel.png">
       </div>
       <div id="info">
-          Week: <p id="week">0</p>
-          Small Houses: <p id="smallHouse">0</p>
-          Large Houses: <p id="largeHouse">0</p>
-          Woodcutters Hut: <p id="woodcuttersHut">0</p>
-          Quarry: <p id="quarry">0</p>
-          Mine: <p id="mine">0</p>
-          Camp: <p id="camp">0</p>
-          Farm: <p id="farm">0</p>
+          Year: <p id="year">1</p><br>
+          Month: <p id="month">1</p><br>
+          Week: <p id="week">0</p><br>
+          Small Houses: <p id="smallHouse">0</p><br>
+          Large Houses: <p id="largeHouse">0</p><br>
+          Woodcutters Hut: <p id="woodcuttersHut">0</p><br>
+          Quarry: <p id="quarry">0</p><br>
+          Mine: <p id="mine">0</p><br>
+          Camp: <p id="camp">0</p><br>
+          Farm: <p id="farm">0</p><br>
       </div>
     </div>
   </body>

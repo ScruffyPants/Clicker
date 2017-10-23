@@ -2,6 +2,7 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 #container{
   height:100vh;
@@ -17,9 +18,18 @@
   list-style: none;
 }
 #resources p{
-  float: right;
+  #float: right;
   font-size: 9vh;
+  padding-left: 2vw;
 }
 .button{
   height:9vh;
+}
+p{
+  display:inline;
+}
+#info, #people{
+  text-align: center;
+  vertical-align: middle;
+  font-size: 200%;
 }
