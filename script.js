@@ -26,7 +26,8 @@ var week = 0;
 var occupation = {
 	woodcutters:[["wood", 3],["food", -1]],
 	miners:[["stone", 3], ["food", -1]],
-	farmers:[["food", 3], ["stone", -1], ["wood", -1]]
+	farmers:[["food", 3], ["stone", -1], ["wood", -1]],
+	troops:[["food", -1], ["stone", -1], ["wood", -1]]
 };
 
 var requirements = {
