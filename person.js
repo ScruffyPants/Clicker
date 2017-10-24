@@ -2,7 +2,10 @@ class Person{
   constructor(){
     this.firstName = namelist[Math.floor(Math.random() * namelist.length)];
     this.lastName = "Pavardenis";
-    this.age = 20;
+    this.age = Math.floor(Math.random() * 21);
+    this.ageOfDead = Math.floor(Math.random() * 50)+30;
+    this.married = false;
+    this.gender = genderlist[Math.floor(Math.random() * genderlist.length)];
     this.occupation = "none";
   }
 
@@ -10,13 +13,26 @@ class Person{
     this.occupation = occupation;
   }
 
-  generateName(){
+  generateNewFirstName(){
     this.firstName = namelist[Math.floor(Math.random() * namelist.length)];
     console.log(this.firstName);
   }
 
+  setFristName(name){
+    this.firstName = name;
+  }
+
+  setLastName(name){
+    this.lastName = name;
+  }
+
   printInfo(){
-    console.log(this.firstName);
+    console.log("First Name: "+this.firstName);
+    console.log("Last Name: "+this.lastName);
+    console.log("Age: "+this.age);
+    console.log("Is married: "+this.married);
+    console.log("Gender: "+this.gender);
+    console.log("Occupation: "+this.occupation);
   }
 }
 var namelist = ["Merek","Carac","Ulric","Tybalt","Borin","Sadon","Terrowin","Rowan",
@@ -39,3 +55,4 @@ var namelist = ["Merek","Carac","Ulric","Tybalt","Borin","Sadon","Terrowin","Row
             "Dimia","Aleida","Ariana","Alexia","Katelyn","Katrina","Loreena","Kaylein",
             "Seraphina","Duraina","Ryia","Farfelee","Benevolence","Brangian","Elspeth"
             ];
+var genderlist = ["male","female"];

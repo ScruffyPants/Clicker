@@ -1,21 +1,21 @@
 var resources = {
-	wood:0,
-	stone:0,
-	food:0,
+	wood:100,
+	stone:100,
+	food:100,
 	metal:0,
 	weapons:0,
 	woodcutters:0,
 	miners:0,
 	troops:0,
-	unemployed:0,
-	smallHouse:0,
+	unemployed:2,
+	smallHouse:1,
 	largeHouse:0,
 	woodcuttersHut:0,
 	quarry:0,
 	mine:0,
 	camp:0,
 	farm:0,
-	population:0,
+	population:new Array(),
 	farmers:0
 };
 
@@ -73,7 +73,7 @@ function buy(clickedId){
 			resources[requirements[clickedId][i][0]]-= requirements[clickedId][i][1];
 			document.getElementById(requirements[clickedId][i][0]).innerHTML = resources[requirements[clickedId][i][0]];
 		}
-		increasePopulation(clickedId);
+		//increasePopulation(clickedId);
 	}
   Update();
 }
@@ -81,8 +81,9 @@ function buy(clickedId){
 function Update(){
   for(var key in resources){
     if(document.getElementById(key))
-      document.getElementById(key).innerHTML = resources[key];
+      document.getElementById(key).innerHTML = resources[key].constructor === Array ? resources[key].length : resources[key];
   }
+	/*
   for(var key in people){
     if(document.getElementById(key))
       document.getElementById(key).innerHTML = people[key];
@@ -91,6 +92,7 @@ function Update(){
     if(document.getElementById(key))
       document.getElementById(key).innerHTML = houses[key];
   }
+	*/
 }
 
 function increasePopulation(clickedId){
@@ -113,6 +115,21 @@ function resourseChange(){
 	Update();
 }
 
+function checkForNewResidents(){
+	var freeSpace = (resources.smallHouse * 2) + (resources.largeHouse * 4);
+	//console.log("freeSpace = "+freeSpace+" Population = "+resources.population);
+	if(resources.population.length < freeSpace){
+		var newcomers = Math.floor(Math.random() * (freeSpace-resources.population.length));
+		for(var i = 0; i<newcomers; i++)
+			resources.population[resources.population.length] = new Person();
+		resources.unemployed += newcomers;
+		console.log(newcomers + " new citizens");
+	}
+	else
+		console.log("No free space in town");
+
+}
+
 function gameCounter(){
   week++;
 	if(week%4 == 0){
@@ -120,6 +137,7 @@ function gameCounter(){
 		if(month == 13){
 			month = 1;
 			year++;
+			checkForNewResidents();
 			document.getElementById("year").innerHTML = year;
 		}
 		document.getElementById("month").innerHTML = month;
@@ -130,5 +148,7 @@ function gameCounter(){
 }
 
 function startGame(){
+	resources.population[0] = new Person();
+	resources.population[1] = new Person();
   gameCounter();
 }
